@@ -146,9 +146,8 @@ let projects=[
 
 ];
 
-
-module.exports={
-    adminData,
-    projectCats,
-    projects,
-}
+// module.exports={
+//     adminData,
+//     projectCats,
+//     projects,
+// }

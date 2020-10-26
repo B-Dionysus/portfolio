@@ -1,0 +1,15 @@
+.projectCatTab{
+    border-top:1px solid black;
+    border-right:1px solid black;
+    border-top-left-radius: 50%;
+    font-weight: bold;
+}
+.main-title{
+    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+}
+.main-display{
+    border:1px solid black;
+}
+
