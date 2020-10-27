@@ -26,7 +26,7 @@ let projectCats=[
         title:"Benjamin Dionysus",
         desc:"Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
         tabName:"Main Page",
-        thumbnail:"https://via.placeholder.com/150",
+        thumbnail:"./assets/img/mainPhoto-BAD.jpg",
         addedBy:1,
         displayOrder:1,
     },

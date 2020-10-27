@@ -3,23 +3,24 @@ $("document").ready(init);
 
 
 function init(){
-    buildTabs(projectCats);
+    buildTabs(projectCats, 4);
 }
-function populateMain(proObj){
-    // <div class="col-1 display-spacing"> <!-- Spacing column --> </div>
-    // <div class="col-10 main-display"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium provident eveniet sit, unde iste veniam tempore labore officia impedit quam consequuntur aspernatur dolorum rerum suscipit velit! Consequatur nesciunt optio ratione!</div>
-    // <div class="col-1 display-spacing"> <!-- Spacing column --> </div>
+function populateMain(array, id){
     let main=$("#main");
+    main.empty();
+    let proObj={};
+    for(elem of array) if(elem.id==id) proObj=elem;
     main.append($("<div>").addClass("col-1 display-spacing"));
     let mainBody=$("<div>").addClass(" col-10 main-display");
     
     mainBody.append($("<img>").addClass("heroImage").attr("src",proObj.thumbnail));
+    mainBody.append($("<h5>").addClass("project-title").text(proObj.title));
     mainBody.append($("<div>").addClass("<p>").text(proObj.desc));
     main.append(mainBody);
     main.append($("<div>").addClass("col-1 display-spacing"));
 }
 
-function buildTabs(array){
+function buildTabs(array, id){
     tabRow=$("#tabRow");
     tabRow.empty();
     // Make sure the tabs are sorted by their displayOrder
@@ -29,25 +30,25 @@ function buildTabs(array){
     // If there are five tabs, colW should just be 2 across the board
     let tabWidth=Math.floor(10/array.length);
     let titleWidth=2+(10%array.length); 
-    tabRow.append($("<div>").addClass("col-1 display-spacing"));    
+ 
     for(tab of array){
-        let tabClass="main-title";
          // If it's an uneven number, the title tab gets the remainder, see above
-        if(tab.displayOrder===1){
-             colW=titleWidth;
-
-            }
-        else {
-            tabClass="projectCatTab";
-            colW=tabWidth;
+        if(tab.id===id){
+            tabRow.prepend($("<div>").addClass(`col-${titleWidth} main-title`).text(`${tab.tabName}`));
         }
-        tabRow.append($("<div>").addClass(`col-${colW} ${tabClass}`).text(`${tab.tabName}`));
+        else {            
+            let newTab=$("<div>").addClass(`col-${tabWidth} projectCatTab`).text(`${tab.tabName}`);
+            newTab.attr("data-id", tab.id);
+            
+            newTab.on("click",function(){
+                buildTabs(projectCats, $(this).attr("data-id"));                 
+            });
+            tabRow.append(newTab);
+        }
     }
+    tabRow.prepend($("<div>").addClass("col-1 display-spacing"));   
     tabRow.append($("<div>").addClass("col-1 display-spacing"));
-
-
-    
-    populateMain(array[0]);
+    populateMain(array,id);
 }
 
 

@@ -3,13 +3,27 @@
     border-right:1px solid black;
     border-top-left-radius: 50%;
     font-weight: bold;
+    padding-top: 1%;
+    background-color: blanchedalmond;
 }
 .main-title{
     font-weight: bold;
     font-size: large;
     padding: 10px;
+    padding-left:5%;
+    border-top-left-radius: 50%;
+    border-top:1px solid black;
+    border-right:1px solid black;
+    background-color:lightblue;
 }
 .main-display{
     border:1px solid black;
+    padding: 10px;
+    background-color: blanchedalmond;
 }
-
+.heroImage{
+        width: 50%;
+        margin: auto;
+        margin-right: 2%;
+        float:left;
+}
