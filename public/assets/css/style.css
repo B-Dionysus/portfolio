@@ -46,3 +46,29 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
         z-index: 10;
         position: relative;
 }
+.project-title{
+    position:relative;
+}
+.project-desc{
+    position: relative;
+}
+  
+@media only screen and (max-width: 400px) {
+    .projectCatTab {
+        border-top-left-radius: 0;
+        font-size: small;
+        font-weight: normal;
+        margin-left: 0;
+        padding: 0;
+    }
+  }
+@media only screen and (max-width: 500px) {
+    .projectCatTab {
+        font-size: small;
+        font-weight: normal;
+    }
+  }
+@media only screen and (min-width: 800px) {
+    .heroImage {
+        width: 25%;
+    }

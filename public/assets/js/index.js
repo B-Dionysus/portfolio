@@ -15,7 +15,7 @@ function populateMain(array, id){
     mainBody.append($("<div>").addClass("main-display-image"));
     mainBody.append($("<img>").addClass("heroImage").attr("src",proObj.thumbnail));
     mainBody.append($("<h5>").addClass("project-title").text(proObj.title));
-    mainBody.append($("<div>").addClass("<p>").text(proObj.desc));
+    mainBody.append($("<div>").addClass("project-desc").text(proObj.desc));
     main.append(mainBody);
     main.append($("<div>").addClass("col-1 display-spacing"));
 }
@@ -30,21 +30,22 @@ function buildTabs(array, id){
     // If there are five tabs, colW should just be 2 across the board
     let tabWidth=Math.floor(10/array.length);
     let titleWidth=2+(10%array.length); 
- 
     for(tab of array){
-         // If it's an uneven number, the title tab gets the remainder, see above
-        if(tab.id===id){
-            tabRow.prepend($("<div>").addClass(`col-${titleWidth} main-title`).text(`${tab.tabName}`));
+        let newTab=$("<div>").text(`${tab.tabName}`);
+        newTab.attr("data-id", tab.id);            
+        newTab.on("click",function(){
+            buildTabs(projectCats, $(this).attr("data-id"));                 
+        });
+        // Note that id was passed from a previous function as a string here, while tab.id is a number
+        if(tab.id==id){
+            newTab.addClass(`col-${titleWidth} main-title`);
+            tabRow.prepend(newTab);
         }
-        else {            
-            let newTab=$("<div>").addClass(`col-${tabWidth} projectCatTab`).text(`${tab.tabName}`);
-            newTab.attr("data-id", tab.id);
-            
-            newTab.on("click",function(){
-                buildTabs(projectCats, $(this).attr("data-id"));                 
-            });
+        else             
+        {
+            newTab.addClass(`col-${tabWidth} projectCatTab`);
             tabRow.append(newTab);
-        }
+        }        
     }
     tabRow.prepend($("<div>").addClass("col-1 display-spacing"));   
     tabRow.append($("<div>").addClass("col-1 display-spacing"));
