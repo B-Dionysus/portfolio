@@ -12,7 +12,7 @@ function populateMain(array, id){
     for(elem of array) if(elem.id==id) proObj=elem;
     main.append($("<div>").addClass("col-1 display-spacing"));
     let mainBody=$("<div>").addClass(" col-10 main-display");
-    
+    mainBody.append($("<div>").addClass("main-display-image"));
     mainBody.append($("<img>").addClass("heroImage").attr("src",proObj.thumbnail));
     mainBody.append($("<h5>").addClass("project-title").text(proObj.title));
     mainBody.append($("<div>").addClass("<p>").text(proObj.desc));

@@ -1,10 +1,17 @@
+body{
+    background-image: url("../img/fisk06-edit.3b.png");
+    background-size: ;
+}
+/* Background image: Harold Fisk's map of the banks of the Mississippi rvier over time
+https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-fisk */
+
 .projectCatTab{
     border-top:1px solid black;
     border-right:1px solid black;
     border-top-left-radius: 50%;
     font-weight: bold;
     padding-top: 1%;
-    background-color: blanchedalmond;
+    background-color:white;
 }
 .main-title{
     font-weight: bold;
@@ -14,16 +21,28 @@
     border-top-left-radius: 50%;
     border-top:1px solid black;
     border-right:1px solid black;
-    background-color:lightblue;
+    background-color:lightgray;
 }
 .main-display{
     border:1px solid black;
     padding: 10px;
-    background-color: blanchedalmond;
+    background-color:lightgray;
+}
+.main-display-image{
+    opacity: .25;
+    background-image: url("../img/fisk06-edit.2b.png");
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 .heroImage{
         width: 50%;
         margin: auto;
         margin-right: 2%;
         float:left;
+        z-index: 10;
+        position: relative;
 }
