@@ -1,6 +1,5 @@
 body{
-    background-image: url("../img/fisk06-edit.3b.png");
-    background-size: ;
+    background-image: url("../img/mississippi-bw.png");
 }
 /* Background image: Harold Fisk's map of the banks of the Mississippi rvier over time
 https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-fisk */
@@ -11,7 +10,18 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     border-top-left-radius: 50%;
     font-weight: bold;
     padding-top: 1%;
-    background-color:white;
+    background-color:lightgray;
+}
+.tab-dropshadow{
+    position: absolute;
+    opacity: .25;
+    z-index: -1;
+    border-top-left-radius: 50%;
+    width: 104%;
+    height: 100%;
+    top: 10px;
+    left: 0px;
+    background-color: black;
 }
 .main-title{
     font-weight: bold;
@@ -21,22 +31,45 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     border-top-left-radius: 50%;
     border-top:1px solid black;
     border-right:1px solid black;
-    background-color:lightgray;
+    background-color:white;
 }
 .main-display{
+    position: relative;
+    z-index:1;
     border:1px solid black;
     padding: 10px;
     background-color:lightgray;
 }
 .main-display-image{
-    opacity: .25;
-    background-image: url("../img/fisk06-edit.2b.png");
+    opacity: .35;
+    background-image: url("../img/mississippi-color.png");
     z-index: 0;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
+}
+
+.main-display-bg{
+    opacity: 1;
+    background-color: white;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.main-dropshadow{
+    opacity: .25;
+    z-index: -2;
+    width: 100.5%;
+    height: 103%;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    background-color: black;
 }
 .heroImage{
         width: 50%;
@@ -52,7 +85,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
 .project-desc{
     position: relative;
 }
-  
+
 @media only screen and (max-width: 400px) {
     .projectCatTab {
         border-top-left-radius: 0;
