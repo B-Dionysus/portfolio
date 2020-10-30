@@ -44,7 +44,7 @@ let projectCats=[
         title:"Microcontroller Projects",
         desc:"Teensy and Arduino controllers. C++",
         tabName:"Arduino",
-        thumbnail:"https://via.placeholder.com/150",
+        thumbnail:"./assets/img/teensy.jpg",
         addedBy:1,
         displayOrder:3,
     },
