@@ -3,7 +3,8 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use("/Assets", express.static("Assets"));
+app.use("*/css",express.static("public/assets/css"));
+app.use("*/js",express.static("public/assets/js"));
 app.use(express.static("public"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
