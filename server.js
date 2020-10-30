@@ -5,6 +5,7 @@ var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
 app.use("*/css",express.static("public/assets/css"));
 app.use("*/js",express.static("public/assets/js"));
+app.use("*/img",express.static("public/assets/img"));
 app.use(express.static("public"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
