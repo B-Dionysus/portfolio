@@ -11,6 +11,15 @@ var orm = {
       }
       cb(result);
     });
+  },
+  mainPage: function(tabName, cb){
+    const queryString = "SELECT * FROM projectCat where tabName=?";
+    connection.query(queryString, [tabName], function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
   }
 };
 

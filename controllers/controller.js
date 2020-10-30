@@ -18,9 +18,9 @@ router.get("/", function(req, res) {
   router.get("/test", function(req, res) {
 
     console.log("Hello there?");
-    orm.all("projectCat", function(data){
-        res.render("index");
-//        portfolio.populateMain(data);
+    orm.mainPage("Main Page",function(data){
+        console.log(data);
+        res.render("index", data[0]);
     });
   });
   
