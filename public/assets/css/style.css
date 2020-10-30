@@ -10,7 +10,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     border-top-left-radius: 50%;
     font-weight: bold;
     padding-top: 1%;
-    background-color:lightgray;
+    background-color:lightgray; 
 }
 .tab-dropshadow{
     position: absolute;
