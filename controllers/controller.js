@@ -16,11 +16,11 @@ router.get("/", function(req, res) {
   });
 
   router.get("/test", function(req, res) {
-
-    console.log("Hello there?");
     orm.mainPage("Main Page",function(data){
-        console.log(data);
-        res.render("index", data[0]);
+        let mainTitle=data.shift();
+        let tabArray=data;
+        console.log("Main: "+mainTitle);
+        res.render("index", {main:mainTitle, tabs:tabArray});
     });
   });
   

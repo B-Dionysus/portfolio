@@ -13,13 +13,22 @@ var orm = {
     });
   },
   mainPage: function(tabName, cb){
-    const queryString = "SELECT * FROM projectCat where tabName=?";
+    const queryString = "SELECT * FROM projectCat";
     connection.query(queryString, [tabName], function(err, result) {
       if (err) {
         throw err;
       }
       cb(result);
     });
+  },
+  findTab: function(tabName, cb){
+  const queryString = "SELECT * FROM projectCat where tabName=?";
+  connection.query(queryString, [tabName], function(err, result) {
+    if (err) {
+      throw err;
+    }
+    cb(result);
+  });
   }
 };
 
