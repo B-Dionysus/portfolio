@@ -4,7 +4,7 @@ var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use("*/css",express.static("public/assets/css"));
-app.use("*/js",express.static("public/assets/js"));
+app.use("*/script",express.static("public/assets/script"));
 app.use("*/img",express.static("public/assets/img"));
 app.use(express.static("public"));
 // Parse request body as JSON
@@ -18,7 +18,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-let routes = require("./controllers/controller.js");
+let routes = require("./routes/api-route.js");
 
 app.use(routes);
 
