@@ -30,7 +30,7 @@ var orm = {
     })
   },
   loadTabs:function(id, main, cb){
-    connection.query("select tabName, id from projectcat where id!=? order by displayOrder;", [id],(err,data)=>{
+    connection.query("select tabName, id from projectCat where id!=? order by displayOrder;", [id],(err,data)=>{
         if(err) throw err;
         
         cb(main, data);
