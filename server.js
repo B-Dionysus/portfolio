@@ -1,32 +1,46 @@
-//  dependencies
-const express = require('express');
-const exphbs = require('express-handlebars')
-
-const db = require('./models');
-
-// const routes = require('./routes');
-
-// create an instance of express
-const app = express();
-
-// either heroku or localhost
-const PORT = process.env.PORT || 8080;
-
-
-
+var express = require("express")
+const passport = require("./config/passport");;
+var app = express();
+// Static directory to be served
 app.use(express.static("public"));
-app.use(express.urlencoded({extended:true}));
+const session = require("express-session");
+var PORT = process.env.PORT || 8080;
+app.use(
+  session({ secret: "all your base", resave: true, saveUninitialized: true })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+let db = require("./models")
+
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-require("./routes/api-routes.js")(app);
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+// Routes
+// =============================================================
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 
-// Start our server so that it can begin listening to client requests.
-db.sequelize.sync().then(function() {
-    app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  })
-}); 
+// We need to use sessions to keep track of our user's login status
+// Double-check what all this biz means, esp. the "secret" there!
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+// Here we introduce HTML routing to serve different HTML files
+// require("./routes/html-routes.js")(app);
+
+// Starts the server to begin listening
+// =============================================================
+db.sequelize.sync().then(app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
+}));

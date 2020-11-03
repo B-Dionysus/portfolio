@@ -1,9 +1,9 @@
-const { INTEGER } = require("sequelize/types");
+const { INTEGER } = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
     const Category = sequelize.define("Category", {
         title: DataTypes.STRING,
-        about: DataTypes.STRING,
+        about: DataTypes.STRING(1024),
         tabName: DataTypes.STRING,
         thumbnail: DataTypes.STRING,
         addedBy:INTEGER,
@@ -11,5 +11,11 @@ module.exports = function(sequelize, DataTypes) {
         status:INTEGER
     });
 
-    return Burger;
+    Category.associate = function(models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        Category.hasMany(models.Project, {
+        });
+      };
+    return Category;
 };
