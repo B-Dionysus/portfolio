@@ -1,3 +1,4 @@
+drop database portfolio;
 create database portfolio;
 use portfolio;
 create table admin(id int not null auto_increment primary key, name varchar(255), password varchar(255), accesLevel int);
