@@ -6,6 +6,7 @@ This is a fully-responsive, dynamic page made with sequelize-cli and handlebars.
 ## Table of Contents
 * [Description](#description)
 * [Installation Instructions](#Installation%20Instructions)
+* [Exciting Trivia](#Exciting%20Trivia)
 * [Live URL](#Live%20URL)
 * [Screenshot](#Screenshot)
 * [License](#License)
@@ -13,6 +14,9 @@ This is a fully-responsive, dynamic page made with sequelize-cli and handlebars.
 ## Installation Instructions
 In the same directory as package.json, type ```npm install```
 You will also need to set up a database for this.
+## Exciting Trivia
+The background image is one of Harold Fisk's maps of the banks of the Mississippi river. The are unique and delightful, because they are maps of space but also of time--Fisk charted the ever-changing course of the river through the seasons.
+https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-fisk
 ## Live URL
 https://desolate-waters-58175.herokuapp.com/
 ## Screenshot
