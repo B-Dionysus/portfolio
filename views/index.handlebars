@@ -13,8 +13,7 @@
         <div class="col-10 main-display">
             <div class="row">
                 <div class="main-display-image"></div>
-                <div class="main-display-bg"></div>      
-                <div class="main-text-bg"></div>    
+                <div class="main-display-bg"></div>    
                 <div class="main-dropshadow"></div>
 
                 <div class="col-4">
@@ -25,18 +24,16 @@
                     </div>
                     <div class="row">
                         <div class="col project-table-of-contents">
-                            {{#if project}}<strong>Project Links:</strong>{{/if}}
-                            <ul>
-                            {{#each project}}
-                                <li>
-                                    <a href="{{externalLink}}" target="_blank">{{displayName}}</a>
-                                </li>
-                            {{/each}}
-                            </ul>
+                            {{#if mainPage}} 
+                            <div class="contact-info">Benjamin Dionysus</div> 
+                            <div class="contact-info">benjamin@sixbynine.com</div> 
+                            <div class="contact-info">773-209-2241</div> 
+                            {{else}}{{> project-Table-Contents}} {{/if}}
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-8">                      
+                    <div class="main-text-bg"></div>    
                     <div class="project-title">{{main.title}}</div>
                     <div class="project-desc">{{{main.about}}}</div>
                 </div>
@@ -52,22 +49,7 @@
                             {{/each}}
                             </ul> --}}
                 </div>
-                <div class="col-8 project">
-                    <div class="row row-cols-3">
-                        {{#each project}}
-                        <div class="m-3 project">
-                            <div class="main-dropshadow"></div>
-                            <a href="{{externalLink}}" target="_blank">
-                                <img width="100%" src="{{thumbnail}}">
-                            </a>
-                            <div class="project-link">{{displayName}}
-                                <span class="project-github"><a href="{{github}}" target="_blank"><i class="fab fa-github"></i></a></span>
-                            </div>
-                        </div>
-                        {{/each}}
-                    </div>
-                    </ul>
-                </div>                
+                    {{#if mainPage}} {{> main-links }} {{else }}{{> projects }}{{/if}}
             </div>            
         </div>
 </div>

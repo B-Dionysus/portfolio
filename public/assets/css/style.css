@@ -54,7 +54,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     background-color:lightgray;
 }
 .main-display-image{
-    opacity: .35;
+    opacity: .65;
     background-image: url("../img/mississippi-color.png");
     z-index: 0;
     width: 100%;
@@ -68,10 +68,10 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100%;
+    width: 99%;
     height: 100%;
     z-index: 0;
-    opacity: .0;
+    opacity: .55;
 }
 .main-display-bg{
     opacity: 1;
@@ -83,6 +83,14 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     top: 0px;
     left: 0px;
 }
+.contact-info{
+    font-weight: bold;
+    position: relative;
+    z-index: 11;
+    top: -15px;
+    font-size: 1.3vw;  
+}
+
 .hero-image{
         width:100%;
         z-index: 10;
@@ -92,6 +100,14 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     margin:0;
     width:100%;
 }
+.main-link{
+    position: relative;
+    z-index: 10;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+}
 .project{
     position:relative;
     height:fit-content;
@@ -100,6 +116,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     position:relative;
     font-weight: bold;
     text-align: center;
+    font-size: 1.3vw;
 }
 .project-desc{
     position: relative;
@@ -129,6 +146,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     margin-top:20px;
     position:absolute;
     margin-left:8%;
+    z-index: 10;
 }
 .admin-login{
     color: black;

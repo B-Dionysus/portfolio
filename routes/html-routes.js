@@ -44,7 +44,7 @@ function htmlRoutes(app){
         if(req.user)accessLevel=req.user.accessLevel;
         // People who have not logged in have an access level of 0
         // Default uses have an access level of 10
-        category.displayMain(res, accessLevel);
+        category.displayProject(res, 1, accessLevel);
     });
     app.get("/project/:id", (req, res)=>{
         let accessLevel=0;

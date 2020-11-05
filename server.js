@@ -1,4 +1,5 @@
 var express = require("express")
+const path=require("path");
 const passport = require("./config/passport");;
 var app = express();
 // Static directory to be served
@@ -22,7 +23,11 @@ app.use(express.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ 
+    defaultLayout: "main",
+    partialsDir  : [  path.join(__dirname, 'views/partials'),]
+  }));
+
 app.set("view engine", "handlebars");
 // Routes
 // =============================================================
