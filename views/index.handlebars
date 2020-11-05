@@ -2,7 +2,7 @@
     <div class="col-1 display-spacing"></div>
     <div data-id="{{main.id}}" class="col-4 main-title">{{main.tabName}}</div>
     {{#each tabs}}
-        <div data-id="{{this.id}}" class="col-2 projectCatTab">{{this.tabName}}
+        <div data-id="{{this.id}}" class="col-2 project-cat-tab">{{this.tabName}}
             {{#if @last}} <div class="tab-dropshadow"></div> {{/if}}
         </div>
     {{/each}}
@@ -16,36 +16,53 @@
                 <div class="main-display-bg"></div>      
                 <div class="main-text-bg"></div>    
                 <div class="main-dropshadow"></div>
-                {{!-- <div class="row main-block"> --}}
-                    {{!-- <div class="row"> --}}
-                        <div class="col-4">
+
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
                             <img class="hero-image" src="{{{main.thumbnail}}}">
                         </div>
-                        <div class="col-8">
-                            <div class="project-title">{{main.title}}</div>
-                            <div class="project-desc">{{{main.about}}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col project-table-of-contents">
+                            {{#if project}}<strong>Project Links:</strong>{{/if}}
+                            <ul>
+                            {{#each project}}
+                                <li>
+                                    <a href="{{externalLink}}" target="_blank">{{displayName}}</a>
+                                </li>
+                            {{/each}}
+                            </ul>
                         </div>
-                    {{!-- </div> --}}
-                {{!-- </div> --}}
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="project-title">{{main.title}}</div>
+                    <div class="project-desc">{{{main.about}}}</div>
+                </div>
             </div>
 
             <div class="row">
                 <div class="col-4">
-                    {{#each project}}
-                        <li>
-                            <a href="{{externalLink}}" target="_blank">{{displayName}}</a>
-                        </li>
-                    {{/each}}
+                            {{!-- <ul>
+                            {{#each project}}
+                                <li>
+                                    <a href="{{externalLink}}" target="_blank">{{displayName}}</a>
+                                </li>
+                            {{/each}}
+                            </ul> --}}
                 </div>
-                <div class="col-8 projects">
+                <div class="col-8 project">
                     <div class="row row-cols-3">
                         {{#each project}}
                         <div class="m-3 project">
+                            <div class="main-dropshadow"></div>
                             <a href="{{externalLink}}" target="_blank">
                                 <img width="100%" src="{{thumbnail}}">
-                                <div class="project-link">{{displayName}}</div>
                             </a>
-                            <div class="project-github"><a href="{{github}}" target="_blank">Github Repo</a></div>
+                            <div class="project-link">{{displayName}}
+                                <span class="project-github"><a href="{{github}}" target="_blank"><i class="fab fa-github"></i></a></span>
+                            </div>
                         </div>
                         {{/each}}
                     </div>

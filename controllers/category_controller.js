@@ -1,8 +1,5 @@
 const db = require("../models");
 
-
-
-
 function displayMain(res, accessLevel){
     db.Category.findAll({raw:true}).then(tabs=> {
         if(accessLevel>=10) isAdmin=true; else isAdmin=false;
@@ -19,8 +16,7 @@ function displayProject(res, projectId, accessLevel){
         let main=projectCats.filter((projectCats)=>projectCats.id==projectId);
         let tabs=projectCats.filter((projectCats)=>projectCats.id!=projectId);
 
-        db.Project.findAll({raw:true}).then((projectData)=>{
-            console.log(projectData);
+        db.Project.findAll({order:["displayOrder", "id"], raw:true}).then((projectData)=>{
             res.render("index",{main:main[0], tabs:tabs, project:projectData, accessGranted:isAdmin})
         })
     });

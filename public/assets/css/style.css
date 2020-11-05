@@ -7,7 +7,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
 
 /* https://publicdomainreview.org/collection/plants-and-their-application-to-ornament-1896 */
 
-.projectCatTab{
+.project-cat-tab{
     border-top:1px solid black;
     border-right:1px solid black;
     border-top-left-radius: 50%;
@@ -94,6 +94,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
 }
 .project{
     position:relative;
+    height:fit-content;
 }
 .project-title{
     position:relative;
@@ -103,17 +104,31 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
 .project-desc{
     position: relative;
     position: relative;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 400px;
+    padding:5px;
+    border-right:1px solid grey;
+    border-bottom:1px solid black;
 }
 .project-link{
-    position:absolute;
-    top:25%;
-    opacity: .8;
-    background-color: white;
+    /* position:absolute; */
+    /* top:25%; */
+    /* opacity: .8; */
+    /* background-color: white; */
+    text-align:center;
+    font-weight: bold;
 }
 .project img{
     vertical-align: middle;
+}
+.project .main-dropshadow{
+    z-index:-1;
+    height:90%;
+}
+.project-table-of-contents{
+    margin-top:20px;
+    position:absolute;
+    margin-left:8%;
 }
 .admin-login{
     color: black;
@@ -135,12 +150,15 @@ a:hover{
 }
 
 @media only screen and (max-width: 300px) {
-    .projectCatTab {
+    .project-cat-tab {
         border-top-left-radius: 0;
         font-size: small;
         font-weight: normal;
         margin-left: 0;
         padding: 0;
+    }
+    .hero-image{
+        width:150%;
     }
     .project-link{
         display:none;
@@ -148,16 +166,19 @@ a:hover{
     .project img{
         width:200%;
     }
-    .project-github{
-        font-size: xx-small;
-    }
   }
 @media only screen and (max-width: 550px) {
-    .projectCatTab {
+    .project-cat-tab {
         font-size: small;
         font-weight: normal;
     }
     .project-link{
+        font-size: small;
+    }
+    .project .main-dropshadow{
+        display:none;
+    }
+    .project-table-of-contents{
         font-size: small;
     }
   }
