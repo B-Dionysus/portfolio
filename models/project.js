@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         about: DataTypes.STRING(1024),
         externalLink:DataTypes.STRING,
         thumbnail: DataTypes.STRING,
-        imageGallery:DataTypes.STRING,
+        github:DataTypes.STRING,
         displayOrder:INTEGER,
     });
     Project.associate = function(models) {

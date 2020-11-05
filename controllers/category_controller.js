@@ -19,7 +19,10 @@ function displayProject(res, projectId, accessLevel){
         let main=projectCats.filter((projectCats)=>projectCats.id==projectId);
         let tabs=projectCats.filter((projectCats)=>projectCats.id!=projectId);
 
-        res.render("index",{main:main[0], tabs:tabs, accessGranted:isAdmin})
+        db.Project.findAll({raw:true}).then((projectData)=>{
+            console.log(projectData);
+            res.render("index",{main:main[0], tabs:tabs, project:projectData, accessGranted:isAdmin})
+        })
     });
 }
 

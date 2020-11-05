@@ -84,18 +84,36 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     left: 0px;
 }
 .hero-image{
-        width: 50%;
-        margin: auto;
-        margin-right: 2%;
-        float:left;
+        width:100%;
         z-index: 10;
         position: relative;
 }
+.main-block{
+    margin:0;
+    width:100%;
+}
+.project{
+    position:relative;
+}
 .project-title{
     position:relative;
+    font-weight: bold;
+    text-align: center;
 }
 .project-desc{
     position: relative;
+    position: relative;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+.project-link{
+    position:absolute;
+    top:25%;
+    opacity: .8;
+    background-color: white;
+}
+.project img{
+    vertical-align: middle;
 }
 .admin-login{
     color: black;
@@ -106,7 +124,17 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     border-right: 2px solid grey;
     border-bottom: 2px solid black;
 }
-@media only screen and (max-width: 400px) {
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+    font-weight:bold;
+}
+
+@media only screen and (max-width: 300px) {
     .projectCatTab {
         border-top-left-radius: 0;
         font-size: small;
@@ -114,15 +142,27 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
         margin-left: 0;
         padding: 0;
     }
+    .project-link{
+        display:none;
+    }
+    .project img{
+        width:200%;
+    }
+    .project-github{
+        font-size: xx-small;
+    }
   }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
     .projectCatTab {
         font-size: small;
         font-weight: normal;
     }
+    .project-link{
+        font-size: small;
+    }
   }
 @media only screen and (min-width: 800px) {
     .hero-image {
-        width: 25%;
+        width:100%;
     }
 }
