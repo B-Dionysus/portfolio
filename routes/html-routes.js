@@ -50,7 +50,11 @@ function htmlRoutes(app){
         let accessLevel=0;
         if(req.user)accessLevel=req.user.accessLevel;
         category.displayProject(res, req.params.id, accessLevel)
-    })
+    });
+    
+    app.get("/login", (req,res)=>{
+        res.redirect("/");
+    });
 }
 
 
