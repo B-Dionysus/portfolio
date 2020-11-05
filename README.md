@@ -5,10 +5,8 @@ This is a fully-responsive, dynamic page made with sequelize-cli and handlebars.
 
 ## Table of Contents
 * [Description](#description)
+* [Installation Instructions](#Installation%20Instructions)
 * [Live URL](#Live%20URL)
-* [Testing Instructions](#Testing%20Instructions)
-* [Contribution Instructions](#How%20to%20Contribute)
-* [Exciting Trivia](#Exciting%20Trivia)
 * [Screenshot](#Screenshot)
 * [License](#License)
 * [Questions](#Questions)
@@ -17,6 +15,8 @@ In the same directory as package.json, type ```npm install```
 You will also need to set up a database for this.
 ## Live URL
 https://desolate-waters-58175.herokuapp.com/
+## Screenshot
+![screenshot](https://raw.githubusercontent.com/B-Dionysus/portfolio/main/portfolioScreenshot.PNG)
 ## License
 License: CC BY 4.0
 ## Questions
