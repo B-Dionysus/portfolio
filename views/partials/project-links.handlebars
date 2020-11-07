@@ -1,0 +1,18 @@
+                <div class="col-12 project">
+                    <div class="row row-cols-2">
+                        {{#each project}}                        
+                            
+                                <div class="col">
+                                    <a href="{{externalLink}}" target="_blank">
+                                    <div class="projectThumbnail" style="background-image: url('{{thumbnail}}')">
+                                        {{!-- <img width="100%" src="{{thumbnail}}">  --}}
+                                    </div>
+                                    </a>
+                                    <div class="project-link">                      
+                                        <a href="{{github}}" target="_blank"> {{displayName}}
+                                        <i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                        {{/each}}
+                    </div>
+                </div> 
