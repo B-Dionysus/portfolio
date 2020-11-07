@@ -1,16 +1,14 @@
                 <div class="col-8 project">
                     <div class="row row-cols-3">
-                        {{#each project}}
-                        <div class="m-3 project">
-                            <div class="main-dropshadow"></div>
-                            <a href="{{externalLink}}" target="_blank">
-                                <img width="100%" src="{{thumbnail}}">
-                            </a>
-                            <div class="project-link">{{displayName}}
-                                <span class="project-github"><a href="{{github}}" target="_blank"><i class="fab fa-github"></i></a></span>
+                        {{#each project}}                        
+                            <div class="project">
+                                <a href="{{externalLink}}" target="_blank">
+                                <img width="100%" src="{{thumbnail}}">  </a>
+                                <div class="project-link">                      
+                                    <a href="{{github}}" target="_blank"> {{displayName}}
+                                    <i class="fab fa-github"></i></a>
+                                </div>
                             </div>
-                        </div>
                         {{/each}}
                     </div>
-                    </ul>
                 </div> 

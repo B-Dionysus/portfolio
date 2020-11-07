@@ -33,18 +33,12 @@ function htmlRoutes(app){
 //         console.log('**********ERROR RESULT****************');
 //         console.log(err);
 //     });
-
-
-
-
-
-
     app.get("/", (req, res) => {
         let accessLevel=0;
         if(req.user)accessLevel=req.user.accessLevel;
         // People who have not logged in have an access level of 0
         // Default uses have an access level of 10
-        category.displayProject(res, 1, accessLevel);
+        category.displayMain(res, 1, accessLevel);
     });
     app.get("/project/:id", (req, res)=>{
         let accessLevel=0;

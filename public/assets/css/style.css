@@ -6,11 +6,15 @@ body{
 https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-fisk */
 
 /* https://publicdomainreview.org/collection/plants-and-their-application-to-ornament-1896 */
+#tab-row{
+    position: relative;
+    margin-top:1rem;
+}
 
 .project-cat-tab{
     border-top:1px solid black;
     border-right:1px solid black;
-    border-top-left-radius: 50%;
+    border-top-right-radius:  1em;
     font-weight: bold;
     padding-top: 1%;
     background-color:lightgray; 
@@ -41,27 +45,30 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     font-size: large;
     padding: 10px;
     padding-left:5%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 1em;
     border-top:1px solid black;
     border-right:1px solid black;
+    border-left:1px solid black;
     background-color:white;
+
 }
 .main-display{
     position: relative;
     z-index:1;
     border:1px solid black;
-    padding: 10px;
+    padding: 2rem;
     background-color:lightgray;
 }
 .main-display-image{
     opacity: .65;
-    background-image: url("../img/mississippi-color.png");
+    background-image: url("../img/mississippi-bw.2b.png");
     z-index: 0;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
+    border:1 px solid black;
 }
 .main-text-bg{
     background-color: white;
@@ -71,7 +78,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     width: 99%;
     height: 100%;
     z-index: 0;
-    opacity: .55;
+    opacity: .75;
 }
 .main-display-bg{
     opacity: 1;
@@ -95,6 +102,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
         width:100%;
         z-index: 10;
         position: relative;
+        border:1px solid black;
 }
 .main-block{
     margin:0;
@@ -107,8 +115,24 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     text-align: center;
     padding: 10px;
     background-color: white;
+    margin:auto;
+    margin-top:1rem;
+    font-size: 1vw;
+  transition: all 0.5s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.project{
+.main-link:hover{
+    
+    font-size: 1.5vw;
+  transition: 0.5s;
+  background: linear-gradient(to bottom, white 0%, rgba(0,0,0,0) 100%);
+  border: 1px solid linear-gradient(to bottom, white 0%, rgba(0,0,0,0) 100%);
+  font-weight:bold;
+  border:none;
+  border-top:1px solid black;
+ 
+}
+roject{
     position:relative;
     height:fit-content;
 }
@@ -117,6 +141,8 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     font-weight: bold;
     text-align: center;
     font-size: 1.3vw;
+    
+    font-family: 'Roboto', sans-serif;
 }
 .project-desc{
     position: relative;
@@ -126,7 +152,13 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     padding:5px;
     border-right:1px solid grey;
     border-bottom:1px solid black;
+    font-size:1.1vw;    
+    font-family: 'Raleway', sans-serif;
 }
+
+/* blockquote{    
+    font-family: 'Roboto Slab', sans-serif;
+} */
 .project-link{
     /* position:absolute; */
     /* top:25%; */
@@ -177,6 +209,7 @@ a:hover{
     }
     .hero-image{
         width:150%;
+        border:1px solid black; 
     }
     .project-link{
         display:none;

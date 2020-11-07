@@ -1,0 +1,51 @@
+<div class="row" id="tab-row">
+    <div class="col-1 display-spacing"></div>
+    <div data-id="{{main.id}}" class="col-4 main-title">{{main.tabName}}</div>
+    {{#each tabs}}
+        <div data-id="{{this.id}}" class="col-2 project-cat-tab">{{this.tabName}}
+            {{#if @last}} <div class="tab-dropshadow"></div> {{/if}}
+        </div>
+    {{/each}}
+    <div class="col-1 display-spacing"></div>
+</div>
+<div class="row " id="main">
+    <div class="col-1 display-spacing">    </div>
+        <div class="col-10 main-display">
+            <div class="row">
+                <div class="main-display-image"></div>
+                <div class="main-display-bg"></div>    
+                <div class="main-dropshadow"></div>
+
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
+                            <img class="hero-image" src="{{{main.thumbnail}}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col project-table-of-contents">
+                           {{> project-Table-Contents}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">                      
+                    <div class="main-text-bg"></div>    
+                    <div class="project-title">{{main.title}}</div>
+                    <div class="project-desc">{{{main.about}}}</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                            {{!-- <ul>
+                            {{#each project}}
+                                <li>
+                                    <a href="{{externalLink}}" target="_blank">{{displayName}}</a>
+                                </li>
+                            {{/each}}
+                            </ul> --}}
+                </div>
+                    {{> projects }}
+            </div>            
+        </div>
+</div>
