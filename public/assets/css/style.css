@@ -140,8 +140,8 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     position:relative;
     font-weight: bold;
     text-align: center;
-    font-size: 1.3vw;
-    
+    font-size: 1.3vw;    
+    text-shadow: 7px 9px 16px rgb(0, 0, 0, 40%);
     font-family: 'Roboto', sans-serif;
 }
 .project-desc{
@@ -176,7 +176,8 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     /* background-color: white; */
     text-align:center;
     font-size: 1.5vw;
-    font-weight: bold;
+    font-weight: bold;    
+    text-shadow: 0 0 8px rgb(255, 255, 255);
 }
 .project img{
     vertical-align: middle;
