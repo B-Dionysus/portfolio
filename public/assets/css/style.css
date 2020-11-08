@@ -95,7 +95,8 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     position: relative;
     z-index: 11;
     top: -15px;
-    font-size: 1.3vw;  
+    font-size: 1.3vw;     
+    text-shadow: 0 0 16px rgb(255, 255, 255);
 }
 
 .hero-image{
@@ -120,16 +121,18 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     font-size: 1vw;
     transition: all 0.5s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    max-height:2.5vw;
 }
 .main-link:hover{
-        font-size: 1.5vw;
+    font-size: 1.25vw;
     transition: 0.5s;
     background: linear-gradient(to bottom, white 0%, rgba(0,0,0,0) 100%);
     font-weight:bold;
     border:none;
     border-top:1px solid black;
 }
-roject{
+.project{
     position:relative;
     height:fit-content;
 }
@@ -153,8 +156,8 @@ roject{
     font-family: 'Raleway', sans-serif;
 }
 .projectThumbnail{
-    width: 150px;
-    height: 150px;
+    width: 30vw;
+    height: 30vw;
     margin: auto;
     margin-top: 2rem;
     background-size: contain;
@@ -169,15 +172,16 @@ roject{
     /* opacity: .8; */
     /* background-color: white; */
     text-align:center;
+    font-size: 1.5vw;
     font-weight: bold;
 }
 .project img{
     vertical-align: middle;
 }
-.project .main-dropshadow{
+/* .project .main-dropshadow{
     z-index:-1;
     height:90%;
-}
+} */
 .project-table-of-contents{
     margin-top:20px;
     position:absolute;
@@ -206,13 +210,23 @@ a:hover{
 @media only screen and (max-width: 300px) {
     .project-cat-tab {
         border-top-left-radius: 0;
-        font-size: small;
+        font-size: .5em;
         font-weight: normal;
         margin-left: 0;
         padding: 0;
+    }    
+    .main-title{
+        border-top-left-radius: 0;
+        font-size: .5em;
+        font-weight: normal;
+        margin-left: 0;
+        padding: 0;
+    }    
+    .admin-login{
+        font-size: .5em;
     }
     .hero-image{
-        width:150%;
+        /* width:150%; */
         border:1px solid black; 
     }
     .project-link{
@@ -224,25 +238,25 @@ a:hover{
   }
 @media only screen and (max-width: 550px) {
     .project-cat-tab {
-        font-size: small;
+        font-size: .5em;
+        font-weight: normal;
+    }
+    .main-title {
+        font-size: .5em;
         font-weight: normal;
     }
     .project-link{
-        font-size: small;
+        font-size: .5em;
     }
-    .project .main-dropshadow{
-        display:none;
-    }
+
     .project-table-of-contents{
-        font-size: small;
+        font-size: .5em;
     }
   }
 @media only screen and (min-width: 800px) {
-    .hero-image {
-        width:100%;
-    }
-    .projectThumbnail{
-        width: 300px;
-        height: 300px;
-    }
+
+    /* .projectThumbnail{
+        width: 30vw;
+        height: 30vw;
+    } */
 }
