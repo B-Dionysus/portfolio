@@ -1,0 +1,50 @@
+<div class="row" id="tab-row">
+</div>
+</div><div class="row " id="main">
+    <div class="col-1 display-spacing">    </div>
+        <div class="col-10 main-display">            
+                <div class="main-display-image"></div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">                      
+                    <div class="main-text-bg"></div>    
+                    <div>
+                        <form class="login-form">
+                            <div class="col-6">
+                                <label for="username-input">Username</label>
+                                <input type="input" id="username-input" placeholder="Username">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="password-input">Password   </label>
+                                <input type="password" id="password-input" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-default ml-4">Login</button>
+                            </form>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+</div>  
+<div class="modal" id="login-modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Invalid username or password. Please try again.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        {{!-- <a href="/signup"> --}}
+        {{!-- <button href="/signup" type="button" class="btn btn-primary">Sign Up</button> --}}
+        {{!-- </a> --}}
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/script/main.js"></script>

@@ -96,7 +96,7 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     z-index: 11;
     top: -15px;
     font-size: 1.3vw;     
-    text-shadow: 0 0 16px rgb(255, 255, 255);
+    text-shadow: 0 0 8px rgb(255, 255, 255);
 }
 
 .hero-image{
@@ -201,6 +201,13 @@ https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-f
     border-right: 2px solid grey;
     border-bottom: 2px solid black;
 }
+.login-form{
+    position: relative;
+    padding: 20px;
+}
+
+
+
 a{
     text-decoration: none;
     color: black;

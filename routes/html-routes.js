@@ -2,55 +2,36 @@
 var db = require("../models");
 const router=require("express").router;
 const category=require("../controllers/category_controller.js")
+
+const ADMIN_LEVEL=100;
 function htmlRoutes(app){
-
-// use controlelrs? Or no?
-// https://stackoverflow.com/questions/48376479/executing-multiple-sequelize-js-model-query-methods-with-promises-node
-
-// const user_profile = db.user_profile.findOne({
-//     where: {
-//         profile_id: new_profile_id
-//     }
-// });
-
-// const all_reports = db.report.all();
-
-// const report_details = db.report_detail.findAll({
-//     where: {
-//         profile_id: new_profile_id
-//     }
-// });
-
-// Promise
-//     .all([user_profile, all_reports, report_details])
-//     .then(responses => {
-//         console.log('**********COMPLETE RESULTS****************');
-//         console.log(responses[0]); // user profile
-//         console.log(responses[1]); // all reports
-//         console.log(responses[2]); // report details
-//     })
-//     .catch(err => {
-//         console.log('**********ERROR RESULT****************');
-//         console.log(err);
-//     });
     app.get("/", (req, res) => {
-        let accessLevel=0;
-        if(req.user)accessLevel=req.user.accessLevel;
+        let admin=false;
+        if(req.user && req.user.level>=ADMIN_LEVEL) admin=true;
         // People who have not logged in have an access level of 0
         // Default uses have an access level of 10
-        category.displayMain(res, 1, accessLevel);
+        category.displayMain(res, 1, admin);
     });
     app.get("/project/:id", (req, res)=>{
-        let accessLevel=0;
-        if(req.user)accessLevel=req.user.accessLevel;
-        category.displayProject(res, req.params.id, accessLevel)
+        let admin=false;
+        if(req.user && req.user.level>=ADMIN_LEVEL) admin=true;
+        category.displayProject(res, req.params.id, admin)
     });
     
     app.get("/login", (req,res)=>{
-        res.redirect("/");
+        res.render("login", {loginPage:true});
     });
+    app.get("/signup", (req, res) => {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+          let accessLevel = req.user.accessLevel;
+          if (accessLevel >= ADMIN_LEVEL) accessGranted = true;
+          else admin = false;
+          res.render("landing", { accessGranted });
+        } else res.render("signup", {});
+      });
+    
 }
-
 
 
 module.exports=htmlRoutes;

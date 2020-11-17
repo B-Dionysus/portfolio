@@ -21,15 +21,15 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    {{#if accessGranted}}
+    {{#if admin}}
     <a href="/admin" class="admin-login">Admin</a>
+    {{else if loginPage}}
     {{else}}
     <a href="/login" class="admin-login">Login</a>
     {{/if}}
     <div class="container-fluid">
-
-{{{body}}}
-    <script src="/assets/script/index.js"></script>"
+        {{{body}}}
+    <script src="/assets/script/index.js"></script>
     </div>
 </body>
 </html>
