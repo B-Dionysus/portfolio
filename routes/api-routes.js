@@ -7,7 +7,19 @@ const ADMIN_LEVEL=100;
 
 
 
-function apiRoutes(app){
+function apiRoutes(app){  
+
+    app.get("/api/cat/:id",(req, res)=>{
+    category.displayOneCategory(req.params.id, res);
+  });
+  
+  app.get("/api/cats",(req, res)=>{
+    category.displayAllCategories(res);
+  });
+
+
+
+
 // ------------------------------------------
 // ----              ~~~~~               ----
 // ------------------------------------------
@@ -26,7 +38,6 @@ function apiRoutes(app){
       id: req.user.id
     });
   });
-
   app.post("/api/signup", (req, res) => {
     db.User.create({
       name: req.body.name,
@@ -44,20 +55,6 @@ function apiRoutes(app){
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
-  });
-  // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", (req, res) => {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        username: req.user.username,
-        id: req.user.id
-      });
-    }
   });
 
 }

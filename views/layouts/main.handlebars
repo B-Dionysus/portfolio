@@ -24,6 +24,9 @@
     {{#if admin}}
     <a href="/admin" class="admin-login">Admin</a>
     {{else if loginPage}}
+    {{else if adminPage}}
+    <a href="/logout" class="admin-login">Logout</a>
+
     {{else}}
     <a href="/login" class="admin-login">Login</a>
     {{/if}}

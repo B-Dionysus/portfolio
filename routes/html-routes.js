@@ -17,19 +17,25 @@ function htmlRoutes(app){
         if(req.user && req.user.level>=ADMIN_LEVEL) admin=true;
         category.displayProject(res, req.params.id, admin)
     });
-    
+    app.get("/admin", (req, res) => {
+        let admin=false;
+        // REMEMBER TO REMOVE THIS LINE AFTER TESTING!!!!
+        req.user=true;
+        if(req.user) res.render("admin", {adminPage:true});
+        else res.redirect("/");
+    });
     app.get("/login", (req,res)=>{
         res.render("login", {loginPage:true});
     });
-    app.get("/signup", (req, res) => {
-        // If the user already has an account send them to the members page
-        if (req.user) {
-          let accessLevel = req.user.accessLevel;
-          if (accessLevel >= ADMIN_LEVEL) accessGranted = true;
-          else admin = false;
-          res.render("landing", { accessGranted });
-        } else res.render("signup", {});
-      });
+    // app.get("/signup", (req, res) => {
+    //     // If the user already has an account send them to the members page
+    //     if (req.user) {
+    //       let accessLevel = req.user.accessLevel;
+    //       if (accessLevel >= ADMIN_LEVEL) accessGranted = true;
+    //       else admin = false;
+    //       res.render("landing", { accessGranted });
+    //     } else res.render("signup", {});
+    //   });
     
 }
 
